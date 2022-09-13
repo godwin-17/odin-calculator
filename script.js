@@ -1,5 +1,4 @@
 function add (a, b) {
-  console.log("A is ", a, "B is", b);
   return a + b;
 }
 
@@ -29,10 +28,10 @@ let operator2;
 buttons.forEach(button => {
   button.addEventListener("click", () => {
 
-    if (button.textContent === "Clear") {
+    if (display.textContent === "ERROR!") {
       display.textContent = "";
     }
-
+    
     display.textContent += button.textContent;
   });
 });
@@ -59,8 +58,6 @@ operators.forEach(operator => {
 
 equals.addEventListener("click", () => {
   secondNumber = Number(display.textContent);
-  console.log(firstNumber);
-  console.log("SECOND NUMBER", secondNumber);
 
   if (operator2 === "+") {
     display.textContent = add(firstNumber, secondNumber);
@@ -68,6 +65,8 @@ equals.addEventListener("click", () => {
     display.textContent = subtract(firstNumber, secondNumber);
   } else if (operator2 === "*") {
     display.textContent = multiply(firstNumber, secondNumber);
+  } else if (operator2 === "/" && secondNumber === 0) {
+    display.textContent = "ERROR!";
   } else if (operator2 === "/") {
     display.textContent = divide(firstNumber, secondNumber);
   };
