@@ -5,3 +5,43 @@ html {
 *, *::after, *::before {
   box-sizing: inherit;
 }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.calculator {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+.item {
+  background-color: aquamarine;
+  border: 1px solid black;
+  padding: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.display {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  height: 70px;
+  line-height: 70px;
+  background-color: rgb(239, 239, 239);
+  font-size: 20px;
+  text-align: center;
+}
+
+.equals {
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
+.clear {
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
